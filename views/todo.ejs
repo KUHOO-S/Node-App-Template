@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='../assets/styles.css' type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#final-box").css("pointer-events","none");
+            $('li').on('click', function () {
+                console.log("clicked");
+                var item = $(this).text();
+                console.log(item);
+                $("#final-box").css("pointer-events","auto");
+                $('#final-box').append("<p>"+item+" </p>")
+                $(this).hide();
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <% for(i=0;i<datatodo.length;i++){ %>
+            <td>
+                <div id="todo-table">
+                    <ul>
+                        <%for(j=0;j<datatodo[i].length;j++){ %>
+                        <li><%= datatodo[i][j] %></li>
+
+                        <% } %>
+                    </ul>
+
+                </div>
+            </td>
+            <% } %>
+
+        </tr>
+        <tr>
+            <div id="final-box">
+                <h2>FINAL BOX</h2>
+            </div>
+            
+        </tr>
+    </table>
+
+</body>
+
+</html>
