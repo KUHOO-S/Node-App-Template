@@ -9,10 +9,9 @@ var urlencoded=bodyParser.urlencoded({extended:false});
 
 app.use(express.static('./public'));
 
-var todoController=require('./controllers/todoController');
+var homePage=require('./controllers/homePage');
 
-todoController(app);
+homePage(app);
 
-console.log("hdfsdkj")
 app.listen(3000);
 
