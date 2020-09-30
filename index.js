@@ -13,6 +13,5 @@ var homePage=require('./controllers/homePage');
 
 homePage(app);
 
-console.log("hdfsdkj")
 app.listen(3000);
 
